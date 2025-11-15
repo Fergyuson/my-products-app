@@ -7,21 +7,23 @@ import ProductFilters from '@/src/components/ProductFilters';
 import Link from 'next/link';
 
 export default function ProductsPage() {
-    const { setProducts, getFilteredProducts } = useProductStore();
+    const { products, setProducts, getFilteredProducts } = useProductStore();
     const filteredProducts = getFilteredProducts();
 
     useEffect(() => {
-        async function fetchProducts() {
-            try {
-                const response = await fetch('https://fakestoreapi.com/products');
-                const data = await response.json();
-                setProducts(data);
-            } catch (error) {
-                console.error('Error fetching products:', error);
+        if (products.length === 0) {
+            async function fetchProducts() {
+                try {
+                    const response = await fetch('https://fakestoreapi.com/products');
+                    const data = await response.json();
+                    setProducts(data);
+                } catch (error) {
+                    console.error('Error fetching products:', error);
+                }
             }
+            fetchProducts();
         }
-        fetchProducts();
-    }, [setProducts]);
+    }, [products.length, setProducts]);
 
     return (
         <div className="container mx-auto px-4 py-8">
