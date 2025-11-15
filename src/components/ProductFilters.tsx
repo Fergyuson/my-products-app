@@ -1,6 +1,6 @@
 'use client';
 
-import { useProductStore } from '@/store/useProductStore';
+import { useProductStore } from '@/src/store/useProductStore';
 
 export default function ProductFilters() {
     const { filter, setFilter, searchQuery, setSearchQuery, products, removeProduct } = useProductStore();

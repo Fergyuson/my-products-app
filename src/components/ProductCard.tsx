@@ -1,7 +1,7 @@
 'use client';
 
-import { Product } from '@/types/product';
-import { useProductStore } from '@/store/useProductStore';
+import { Product } from '../types/product';
+import { useProductStore } from '@/src/store/useProductStore';
 import { useRouter } from 'next/navigation';
 
 interface ProductCardProps {

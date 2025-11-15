@@ -1,9 +1,9 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useProductStore } from '@/store/useProductStore';
-import ProductCard from '@/components/ProductCard';
-import ProductFilters from '@/components/ProductFilters';
+import { useProductStore } from '@/src/store/useProductStore';
+import ProductCard from '@/src/components/ProductCard';
+import ProductFilters from '@/src/components/ProductFilters';
 import Link from 'next/link';
 
 export default function ProductsPage() {

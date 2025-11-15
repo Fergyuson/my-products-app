@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useProductStore } from '@/store/useProductStore';
-import { Product } from '@/types/product';
+import { useProductStore } from '@/src/store/useProductStore';
+import { Product } from '@/src/types/product';
 
 export default function CreateProductPage() {
     const router = useRouter();
